@@ -1,49 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/movies/new.css" />
+<%- include('../partials/nav') %>
 
-<head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mongoose Flights</title>
-</head>
+        <main>
+            <h1>
+                <%= title %>
+            </h1>
+            <h1>Enter a New Flight</h1>
+            <form action="/flights" method="POST">
 
-<body>
-    <h1>Enter a New Flight</h1>
-    <form action="/flights" method="POST">
-
-        <label>Airline
-            <select name="airline">
-                <option value="american">American</option>
-                <option value="southwest">SouthWest</option>
-                <option value="united">United</option>
-            </select>
-        </label><br>
+                <label>Airline
+                    <select name="airline">
+                        <option value="american">American</option>
+                        <option value="southwest">SouthWest</option>
+                        <option value="united">United</option>
+                    </select>
+                </label><br>
 
 
-        
-        <label>Airport
-            <!-- <input type="string" name="airport"> -->
-            <select name="airport">
-                <option value="AUS">AUS</option>
-                <option value="DFW">DFW</option>
-                <option value="DEN" selected>DEN</option>
-                <option value="LAX">LAX</option>
-                <option value="SAN">SAN</option>
-            </select>
-        </label><br>
-        
-        <label>FlightNo:
-            <input type="number" name="flightNo">
-        </label><br>
 
-        <label>Departs:
-            <input type="datetime-local" name="departs">
-        </label><br>
-        
-        <button type="submit">Add Flight</button>
-    </form>
-</body>
+                <label>Airport
+                    <input type="string" name="airport">
+                    <select name="airport">
+                        <option value="AUS">AUS</option>
+                        <option value="DFW">DFW</option>
+                        <option value="DEN" selected>DEN</option>
+                        <option value="LAX">LAX</option>
+                        <option value="SAN">SAN</option>
+                    </select>
+                </label><br>
 
-</html>
+                <label>FlightNo:
+                    <input type="number" name="flightNo">
+                </label><br>
+
+                <label>Departs:
+                    <input type="datetime-local" name="departs">
+                </label><br>
+
+                <button type="submit">Add Flight</button>
+            </form>
+        </main>
+
+<%- include("../partials/footer") %>
