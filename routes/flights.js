@@ -13,6 +13,9 @@ router.get('/', flightsCtrl.index)
 // localhost:300/flights/new
 router.get('/new', flightsCtrl.new)
 
+//localhost:3000/flights/:id
+router.get('/:id', flightsCtrl.show)
+
 
 //localhost:3000/flights (this is the endpoint)
 //This is so the created flight goes to the flights route (flights is implied)

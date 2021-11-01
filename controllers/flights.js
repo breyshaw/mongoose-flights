@@ -17,7 +17,7 @@ function create(req, res) {
         if (err) {
             return res.redirect('/flights/new')
         }
-        res.redirect('/flights')
+        res.redirect(`/flights/${flight._id}`)
 })
 }
 
@@ -25,7 +25,16 @@ function index(req,res) {
     Flight.find({}, function(err, flights) {
         res.render('flights/index', {
             flights,
-            title: 'All Fligts'
+            title: 'All Flights'
+        })
+    })
+}
+
+function show(req, res) {
+    Flight.findById(req.params.id, function(err, flight) {
+        res.render('flights/show.ejs', {
+            flight,
+            title: 'Flight Detail'
         })
     })
 }
@@ -33,5 +42,6 @@ function index(req,res) {
 export {
         newFlight as new,
         create,
-        index
+        index,
+        show
     }
