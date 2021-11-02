@@ -21,6 +21,9 @@ router.get('/:id', flightsCtrl.show)
 //This is so the created flight goes to the flights route (flights is implied)
 router.post('/', flightsCtrl.create)
 
+//localhost:3000/flights/:id/tickets
+router.post('/:id/tickets', flightsCtrl.createTicket)
+
 export {
   router
 }

@@ -14,6 +14,29 @@
     <div>Departs: </div>
     <div><%= flight.departs %></div>
   </section>
-</main>
+<!-- </main> -->
+
+<h2>Tickets</h2>
+  <form 
+    id="add-ticket-form"
+    action="/flights/<%= flight._id %>/tickets"
+    method="POST"
+  >
+  <label for="seat-input">Seat:</label>
+  <input name="seat" required pattern="[A-F][1-9]\d?">
+  <label for="price-input">Price:</label>
+  <input name="price">
+    <button type="submit">Add Ticket</button>
+</form>
+
+<h2>Tickets</h2>
+<% flight.tickets.forEach(function(ticket) { %>
+    <h3>Ticket created at: <%= ticket.createdAt.toLocaleDateString() %></h3>
+      <h3>Seat:<%= ticket.seat %></h3>
+        <h3>Price:<%= ticket.price %></h3>
+        <% }) %>
+  
+
+  </main>
   
 <%- include('../partials/footer.ejs') %>
