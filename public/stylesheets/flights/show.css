@@ -32,17 +32,11 @@ ul {
     border-radius: 5px;
   }
   
-  section {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 1.6rem;
-  }
-  
   section div:nth-child(even) {
     font-weight: bold;
   }
 
-/* This is why my create tickets form look funny, will come back to this */
+/* This is why my create ticket forms look funny, will come back to this */
 
   #add-ticket-form {
     display: grid;

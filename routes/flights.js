@@ -5,17 +5,15 @@ import { Router } from 'express'
 import * as flightsCtrl from '../controllers/flights.js'
 const router = Router()
 
-//localhost:3000/flights
 //ALL FLIGHTS
+//localhost:3000/flights
 router.get('/', flightsCtrl.index)
 
-//FLIGHTS ROUTES
 // localhost:300/flights/new
 router.get('/new', flightsCtrl.new)
 
 //localhost:3000/flights/:id
 router.get('/:id', flightsCtrl.show)
-
 
 //localhost:3000/flights (this is the endpoint)
 //This is so the created flight goes to the flights route (flights is implied)

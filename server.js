@@ -37,6 +37,7 @@ app.use(
 app.use('/', indexRouter)
 //Per the spec seven routes, this is the URI (endpoint) for returning a form to add a new blog
 app.use('/flights', flightsRouter)
+
 app.use('/destinations', destinationsRouter)
 
 // catch 404 and forward to error handler
